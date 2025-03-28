@@ -59,7 +59,7 @@
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-4xl font-bold text-gray-800 mb-4">Profesyonel Cilt Bakım Hizmetleri</h2>
       <p class="text-xl text-gray-600 mb-8">Kaliteli hizmet anlayışı ile yanınızdayız</p>
-      <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full">
+      <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full btn-pulse">
         Randevu Al
       </button>
     </div>
@@ -133,15 +133,32 @@
       const mobileMenuButton = document.getElementById('mobileMenuButton');
       const mobileMenu = document.querySelector('.mobile-menu');
       
-      mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('open');
+      function toggleMenu() {
+        const isOpen = mobileMenu.classList.toggle('open');
         const icon = mobileMenuButton.querySelector('i');
-        if (mobileMenu.classList.contains('open')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
+        
+        // Toggle icon
+        icon.classList.toggle('fa-bars', !isOpen);
+        icon.classList.toggle('fa-times', isOpen);
+        
+        // Accessibility improvements
+        mobileMenu.setAttribute('aria-expanded', isOpen);
+        mobileMenuButton.setAttribute('aria-expanded', isOpen);
+        
+        // Toggle body class for scroll prevention
+        document.body.classList.toggle('menu-open', isOpen);
+      }
+      
+      mobileMenuButton.addEventListener('click', toggleMenu);
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!mobileMenu.contains(e.target) && 
+            e.target !== mobileMenuButton && 
+            !mobileMenuButton.contains(e.target)) {
+          mobileMenu.classList.remove('open');
+          mobileMenuButton.querySelector('i').classList.replace('fa-times', 'fa-bars');
+          document.body.classList.remove('menu-open');
         }
       });
     });
