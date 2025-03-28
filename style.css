@@ -33,11 +33,31 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
+    position: fixed;
+    width: 100%;
+    top: 64px; /* Match header height */
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .mobile-menu.open {
-    max-height: 500px;
+    max-height: calc(100vh - 64px);
     transition: max-height 0.5s ease-in;
+    overflow-y: auto;
+}
+
+/* Accessibility focus states */
+[aria-expanded="true"] {
+    outline: 2px solid #ec4899;
+    outline-offset: 2px;
+}
+
+/* Disable scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
 
 /* Testimonial styling */
