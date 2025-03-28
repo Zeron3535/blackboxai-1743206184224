@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Güzellik Merkezi ve Cilt Bakımı - Demo</title>
+  <meta name="description" content="Profesyonel güzellik merkezi ve cilt bakım hizmetleri">
+  
+  <!-- Tailwind CSS -->
+  <link href="https://unpkg.com/tailwindcss@^3.0.0/dist/tailwind.min.css" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f484.png" type="image/png">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header Section -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="logo">
+        <h1 class="text-2xl font-bold text-pink-600">Güzellik Merkezi</h1>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#" class="text-gray-700 hover:text-pink-600">Anasayfa</a>
+        <a href="#" class="text-gray-700 hover:text-pink-600">Hizmetler</a>
+        <a href="#" class="text-gray-700 hover:text-pink-600">Ürünler</a>
+        <a href="#" class="text-gray-700 hover:text-pink-600">Hakkımızda</a>
+        <a href="#" class="text-gray-700 hover:text-pink-600">İletişim</a>
+      </nav>
+      <button class="md:hidden text-gray-700" id="mobileMenuButton">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      <!-- Mobile Menu -->
+      <div class="mobile-menu md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+          <a href="#" class="text-gray-700 hover:text-pink-600 py-2">Anasayfa</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 py-2">Hizmetler</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 py-2">Ürünler</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 py-2">Hakkımızda</a>
+          <a href="#" class="text-gray-700 hover:text-pink-600 py-2">İletişim</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-pink-100 to-purple-100 py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Profesyonel Cilt Bakım Hizmetleri</h2>
+      <p class="text-xl text-gray-600 mb-8">Kaliteli hizmet anlayışı ile yanınızdayız</p>
+      <button class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full">
+        Randevu Al
+      </button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Hizmetlerimiz</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="service-card bg-gray-50 p-6 rounded-lg text-center">
+          <div class="text-pink-600 mb-4">
+            <i class="fas fa-spa text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Cilt Bakımı</h3>
+          <p class="text-gray-600">Profesyonel cilt analizi ve kişiye özel bakım programları</p>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card bg-gray-50 p-6 rounded-lg text-center">
+          <div class="text-pink-600 mb-4">
+            <i class="fas fa-cut text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Epilasyon</h3>
+          <p class="text-gray-600">Lazer ve IPL teknolojisi ile kalıcı epilasyon çözümleri</p>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card bg-gray-50 p-6 rounded-lg text-center">
+          <div class="text-pink-600 mb-4">
+            <i class="fas fa-magic text-4xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Makyaj</h3>
+          <p class="text-gray-600">Özel günler için profesyonel makyaj hizmetleri</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Galeri</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+             alt="Cilt Bakımı" class="w-full h-48 object-cover rounded-lg">
+        <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+             alt="Epilasyon" class="w-full h-48 object-cover rounded-lg">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+             alt="Makyaj" class="w-full h-48 object-cover rounded-lg">
+        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+             alt="Ürünler" class="w-full h-48 object-cover rounded-lg">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <p>© 2024 Güzellik Merkezi. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobileMenuButton');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        const icon = mobileMenuButton.querySelector('i');
+        if (mobileMenu.classList.contains('open')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
